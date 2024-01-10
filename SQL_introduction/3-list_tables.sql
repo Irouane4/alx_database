@@ -1,25 +1,10 @@
--- Delete and create database hbtn_test_db_0 and create 3 tables
-DROP DATABASE IF EXISTS hbtn_test_db_0;
-CREATE DATABASE IF NOT EXISTS hbtn_test_db_0;
-USE hbtn_test_db_0;
+-- 3-list_tables.sql
 
--- Create 3 tables
-CREATE TABLE IF NOT EXISTS holbteron_0 (
-    id INT
-);
+USE information_schema;
 
-CREATE TABLE IF NOT EXISTS holbteron_1 (
-    name VARCHAR(256)
-);
+SET @db_name = DATABASE();
 
-CREATE TABLE IF NOT EXISTS holbteron_2 (
-    id INT,
-    name VARCHAR(256)
-);
-
--- Switch back to the default database (mysql) or the appropriate default database
-USE mysql;
-
--- Show all tables in the specified database (should be empty)
-USE hbtn_test_db_0;
-SHOW TABLES;
+SELECT
+  IFNULL(GROUP_CONCAT(table_name), CONCAT('No tables found in database ', @db_name)) AS Tables_in_@db_name
+FROM tables
+WHERE table_schema = @db_name;
