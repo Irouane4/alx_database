@@ -1,10 +1,12 @@
 -- 3-list_tables.sql
+-- Task: List all tables in the specified database.
 
-USE information_schema;
+USE INFORMATION_SCHEMA;
 
-SET @db_name = DATABASE();
+SET @DB_NAME = DATABASE();
 
+-- Retrieve the list of tables or display a message if none found.
 SELECT
-  COALESCE(GROUP_CONCAT(table_name), CONCAT('No tables found in database ', @db_name)) AS Tables_in_@db_name
-FROM tables
-WHERE table_schema = @db_name;
+  IFNULL(GROUP_CONCAT(TABLE_NAME), CONCAT('No tables found in database ', @DB_NAME)) AS Tables_in_@DB_NAME
+FROM TABLES
+WHERE TABLE_SCHEMA = @DB_NAME;
