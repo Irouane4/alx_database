@@ -1,6 +1,6 @@
 -- Print the full description of the table first_table
 
 -- Use the information_schema to get the table definition
-SELECT table_name, create_table
-FROM information_schema.tables
+SELECT column_name, column_type, is_nullable, column_default
+FROM information_schema.columns
 WHERE table_schema = DATABASE() AND table_name = 'first_table';
