@@ -18,12 +18,12 @@ CREATE TABLE IF NOT EXISTS holbteron_2 (
 );
 
 -- Switch back to the default database (mysql) or the appropriate default database
-SHOW TABLES;
+USE mysql;
 
 -- Delete and create database hbtn_test_db_0 without tables
 DROP DATABASE IF EXISTS hbtn_test_db_0;
 CREATE DATABASE IF NOT EXISTS hbtn_test_db_0;
-USE hbtn_test_db_0;
 
 -- Show all tables in the specified database (should be empty)
+USE hbtn_test_db_0;
 SHOW TABLES;
