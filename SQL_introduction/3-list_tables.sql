@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS holbteron_2 (
 );
 
 -- Switch back to the default database (mysql) or the appropriate default database
-USE mysql;
+SHOW TABLES;
 
 -- Delete and create database hbtn_test_db_0 without tables
 DROP DATABASE IF EXISTS hbtn_test_db_0;
