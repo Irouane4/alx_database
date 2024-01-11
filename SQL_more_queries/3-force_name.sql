@@ -1,15 +1,6 @@
--- 3-force_name.sql
+-- Create the table force_name in the MySQL server
 
--- Create table force_name if not exists
 CREATE TABLE IF NOT EXISTS force_name (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     name VARCHAR(256) NOT NULL
 );
-
--- Insert values into force_name table
-INSERT INTO force_name (name) VALUES
-    ('Holberton School'),
-    ('Python is cool'),
-    ('Holberton'),
-    ('School'),
-    ('C is fun');
