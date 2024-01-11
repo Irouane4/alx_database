@@ -1,11 +1,10 @@
+-- 3-list_tables.sql
+-- Script to list all tables in a specified MySQL database
 
--- Define the database name as an argument
-DATABASE_NAME="$1"
+-- Connect to the MySQL server with the specified database
+USE mysql;
 
--- Connect to the MySQL server and switch to the specified database
-mysql -hlocalhost -uroot -p $DATABASE_NAME << EOF
-
--- List all tables in the database
-SHOW TABLES;
-
-EOF
+-- Display the list of tables in the selected database
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = DATABASE();
