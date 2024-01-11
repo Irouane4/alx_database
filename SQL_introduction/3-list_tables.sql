@@ -1,5 +1,3 @@
-
-
 -- Define the database name as an argument
 DATABASE_NAME="$1"
 
