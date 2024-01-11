@@ -1,10 +1,9 @@
--- 8-cities_of_california_subquery.sql
+-- This script retrieves all the cities of California using a subquery
 
--- Use the hbtn_0d_usa database
-USE hbtn_0d_usa;
-
--- Select cities of California using a subquery
-SELECT id, name
+SELECT cities.id, cities.name
 FROM cities
-WHERE state_id = (SELECT id FROM states WHERE name = 'California')
-ORDER BY id;
+WHERE cities.state_id = (
+    SELECT states.id
+    FROM states
+    WHERE states.name = 'California'
+);
